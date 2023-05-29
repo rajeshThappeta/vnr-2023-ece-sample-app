@@ -1,0 +1,20 @@
+{
+  "users": [
+    {
+      "username": "ravi",
+      "password": "ravi",
+      "email": "ravi@mail.com",
+      "dob": "2023-05-19",
+      "address": {
+        "city": "hyderabad",
+        "street": "kphb",
+        "pincode": "656565"
+      },
+      "id": 1
+    }
+  ],
+  "admins":[{
+    "username":"admin",
+    "password":"admin"
+  }]
+}
