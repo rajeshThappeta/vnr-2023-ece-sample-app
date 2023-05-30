@@ -1,18 +1,19 @@
 import React from 'react'
+import './Footer.css'
 
 function Footer() {
   return (
-    <div className='d-flex justify-content-evenly bg-warning p-5 text-white'>
+    <footer className='d-flex justify-content-between  px-4 py-3 align-items-center '>
       <div className="address">
-        <h3>Hyderabad</h3>
-        <h3>Miyapur</h3>
-        <h4>9393939393</h4>
+        <p className='lead'>Hyderabad</p>
+        <p className='lead'>Miyapur</p>
+        <p className='lead'>9393939393</p>
       </div>
-      <div className="contact">
+      <div className="contact ">
         <p className="lead">test@mail.com</p>
         <p className="lead fw-bold">www.example.com</p>
       </div>
-    </div>
+    </footer>
   )
 }
 

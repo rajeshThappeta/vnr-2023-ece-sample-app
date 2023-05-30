@@ -41,7 +41,7 @@ function Register() {
 
   return (
     <div>
-      <p className="display-4 text-center text-info">User registration</p>
+      <p className="display-4 text-center title">User registration</p>
       <form onSubmit={handleSubmit(createUser)}>
         {/* username */}
         <input
@@ -75,6 +75,14 @@ function Register() {
           className="form-control mb-3"
           
         />
+         {/* profile image */}
+         <input
+          type="text"
+          {...register("profileImage")}
+          id=""
+          className="form-control mb-3"
+          placeholder="Paste URL of profile image"
+        />
         <span className="fw-bold text-secondary">Address</span>
          {/* city */}
          <input
@@ -99,7 +107,7 @@ function Register() {
           placeholder="PINCODE"
         />
         {/* submit button */}
-        <button type="submit" className="btn btn-success">Register</button>
+        <button type="submit" className="btn myBtn mb-3">Register</button>
       </form>
     </div>
   );

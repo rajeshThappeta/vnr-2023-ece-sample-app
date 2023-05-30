@@ -1,8 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Oswald&display=swap');
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Open Sans', sans-serif;
+  font-family: 'Oswald', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -16,5 +17,34 @@ code {
 form{
   width: 500px;
   margin: auto;
-  margin-top: 80px;
+  margin-top: 20px;
+}
+
+
+:root{
+  --heading-color:#c6e2ff;
+  --header-bg-color:#003366;
+  --header-active-bg-color:#4c7093;
+  --page-bg-color:#ccd6e0;
+  --title-color:#002347;
+  --btn-bg-color:#194775;
+}
+
+.title{
+  color: var(--title-color);
+  font-weight: 400;
+  padding: 30px 0px;
+}
+
+.myBtn{
+  background-color: var(--btn-bg-color);
+  color:#e5eaef;
+}
+
+.main{
+  min-height: 80vh;
+  background: linear-gradient(rgba(167, 198, 219, 0.512),rgba(81, 155, 185, 0.673)), url(./images/bg-1.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: transparent;
 }

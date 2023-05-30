@@ -1,0 +1,7 @@
+footer{
+    background-color: var(--header-bg-color);
+}
+
+footer .address ,.contact{
+    color: var(--heading-color);
+}

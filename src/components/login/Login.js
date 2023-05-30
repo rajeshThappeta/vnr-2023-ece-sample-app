@@ -1,4 +1,4 @@
-import React from "react";
+import {useEffect,useState} from "react";
 import "./Login.css";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
@@ -7,7 +7,9 @@ import { useDispatch ,useSelector} from "react-redux";
 
 function Login() {
   let dispatch = useDispatch();
-  let {errorMessage,errorStatus}=useSelector(state=>state.login)
+  let navigate=useNavigate()
+  let {userLoginStatus,errorMessage,errorStatus}=useSelector(state=>state.login)
+  let [userCredObj,setUserCredObj]=useState({})
 
   let {
     register,
@@ -15,16 +17,30 @@ function Login() {
     formState: { errors },
   } = useForm();
 
-  async function loginUser(userCredObj) {
-    let actionObj = loginPromice(userCredObj);
+  async function loginUser(userCredentialsObj) {
+    setUserCredObj(userCredentialsObj)
+    let actionObj = loginPromice(userCredentialsObj);
     dispatch(actionObj)
   }
 
+  useEffect(()=>{
+    if(userLoginStatus===true){
+        if(userCredObj.userType==='user'){
+          navigate('/user-panel')
+        }
+        if(userCredObj.userType==='admin'){
+          navigate('/admin-panel')
+        }
+    }
+  },[userLoginStatus])
+
+
+
   return (
     <div>
-      <p className="display-4 text-center text-info">User login</p>
+      <p className="display-4 text-center title">User login</p>
       {
-        errorStatus===true && <p className="text-danger fw-bold text-center">{errorMessage}</p>
+        errorStatus===true && <p className="text-danger  text-center display-5">{errorMessage}</p>
       }
       <form onSubmit={handleSubmit(loginUser)}>
         {/* user type */}
@@ -74,7 +90,7 @@ function Login() {
         />
 
         {/* submit button */}
-        <button type="submit" className="btn btn-success">
+        <button type="submit" className="btn myBtn">
           Login
         </button>
       </form>

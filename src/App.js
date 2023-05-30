@@ -4,6 +4,8 @@ import RootLayout from './components/RootLayout';
 import Home from './components/home/Home';
 import Register from './components/register/Register';
 import Login from './components/login/Login'
+import UserPanel from './components/user-panel/UserPanel';
+import AdminPanel from './components/admin-panel/AdminPanel'
 
 function App() {
 
@@ -25,6 +27,14 @@ function App() {
         {
           path:'login',
           element:<Login />
+        },
+        {
+          path:'user-panel',
+          element:<UserPanel />
+        },
+        {
+          path:'admin-panel',
+          element:<AdminPanel />
         }
       ]
     }
